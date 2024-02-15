@@ -1,0 +1,23 @@
+# example request
+
+
+import requests
+
+#define endpoint
+ngrok_url = "http://<negrokURLinstance>.ngrok.io" 
+#example
+data = {'age': 78,
+        'sex': 'F',
+        'plasma_CA19_9': 941,
+        'creatinine': 0.46371,
+        'LYVE1': 1.044345,
+        'REG1B': 14.36436,
+        'TFF1': 327.3970973,
+        'REG1A': 646    
+}
+
+# Make a POST request to the ngrok URL endpoint
+response = requests.post(ngrok_url, json=data)
+
+
+print(response.json())
