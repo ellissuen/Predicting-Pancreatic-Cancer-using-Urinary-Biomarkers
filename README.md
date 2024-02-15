@@ -7,7 +7,7 @@
 3) [Process](#process)
 4) [Data](#data)
 5) [Results](#results)
-6) [Deployed Model]
+6) [Deployed Model](#deployment)
 7) [Future Considerations & Challenges](#future_considerations)
 8) [References](#references)
 9) [Github Files Directory](#github_files)
@@ -105,6 +105,10 @@ This allowed for the model to have the following results:
 This model was chosen because of the ability to strike a balance between minimizing FALSE POSITVE RATES and FALSE NEGATIVE RATES. While it is essential that both types of errors should ideally be reduced, the FALSE POSTIVE RATE is a much higher concern, outweighing that of the FALSE NEGATIVE RATE. <br>
 FALSE POSITIVES: Since there is proportionately much more individuals who fall in the ACTUAL NEGATIVE category, the number of overdiagnosis cases are significantly higher than the misdiagnosis cases. Overdiagnosis, can lead to significant consequences, including unnecessary treatment (medical resource strain included), and pychosomatic symptoms arising from the placebo effect in otherwise healthy individuals. <br>
 FALSE NEGATIVES: Conversely, for  individuals facing misdiagnosis, a complex decision concerning ethics is involved, as it hinges on the risk of missed diagnoses and delayed treatment for those who need it. Fortunately, the occurance of FALSE NEGATIVES represent a much smaller percentage of the entire population compared to the FALSE POSITIVES group.
+
+<a name="results"></a>
+## Deployed Model
+
 
 <a name="future_considerations"></a>
 ## Future Considerations & Challenges
