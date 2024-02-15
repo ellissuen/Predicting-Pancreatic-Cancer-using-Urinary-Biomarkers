@@ -15,15 +15,17 @@
 <a name="goals"></a>
 ## Background
 
-According to the World Cancer Research Fund International, pancreatic cancer constitutes ~2.7% of global cancer cases and affects almost 500,000 individuals annually. In its early stages, pancreatic cancer often presents with no noticeble symptoms, and when symptoms do arise, they mimic other general gastrointestinal conditions leading to misdiagnosis or delayed diagnosis. Additionally, there is a lack of effective screening tests compounded by the diseases tendancy for rapid progression and the pancreas's deep abdominal location. Early detection, associated with higher likelihoods of survival in other cancers, is difficult for pancreatic cancer. Consequently, pancreatic cancer disproportionately accounts for ~8% of the global cancer related deaths.
+According to the World Cancer Research Fund International, pancreatic cancer constitutes ~2.7% of global cancer cases and affects almost 500,000 individuals annually. In its early stages, pancreatic cancer often presents with no noticeable symptoms, and when symptoms do arise, they mimic other general gastrointestinal conditions leading to misdiagnosis or delayed diagnosis. Additionally, there is a lack of effective screening tests compounded by the disease's tendency for rapid progression and the pancreas's deep abdominal location. Early detection, associated with higher likelihoods of survival in other cancers, is difficult for pancreatic cancer. Consequently, pancreatic cancer disproportionately accounts for ~8% of the global cancer related deaths.
 
-Several pancreatic screening methods exist, include imaging test like MRI and CT scans, endoscopic ultrasound, blood tests and endoscopicretrograde cholangiopancreatography (ERCP), which involves injecting dye into the pancreatic and bile ducts for X-rays. However, none of these tests are conclusive alone and are all invasive and costly. A promising [study](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1003489) published in 2020 by Debernardi S. et al., titled "A combination of urinary biomarker panel and PancRISK score for earlier detection of pancreatic cancer: A case–control study." offers a preliminary conclusion that biomarkers found in a common urine sample may hold the key to early pancreatic cancer detection. Within this study there are 3 groups of participants, healthy individuals (a), individuals with benign tumors (b) but not life threatening and individuals that have malignant tumors at varing stages of cancer (c). <br>
+Several pancreatic screening methods exist, include imaging test like MRI and CT scans, endoscopic ultrasound, blood tests and endoscopicretrograde cholangiopancreatography (ERCP), which involves injecting dye into the pancreatic and bile ducts for X-rays. However, none of these tests are conclusive alone and are all invasive and costly. A promising [study](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1003489) published in 2020 by Debernardi S. et al., titled "A combination of urinary biomarker panel and PancRISK score for earlier detection of pancreatic cancer: A case–control study." offers a preliminary conclusion that biomarkers found in a common urine sample may hold the key to early pancreatic cancer detection. Within this study there are 3 groups of participants, healthy individuals (a), individuals with benign tumors (b) but not life threatening and individuals that have malignant tumors at varying stages of cancer (c). <br>
 <br>
 ![Tissue sample of various groups of participants](images/pancreatic-cancer.jpg)
 
 <a name="goals"></a>
 ## Goals
 Using the [dataset](https://www.kaggle.com/datasets/johnjdavisiv/urinary-biomarkers-for-pancreatic-cancer) "Urinary biomarkers for pancreatic cancer" from Kaggle, this project aims to develop a supervised machine learning model capable of predicting the presence of malignant cancer in a patient based on their urinary biomarker levels, gender and age. The primary objective is to create a reliable and non-invasive method for early detection of pancreatic cancer, ultimately enhancing patient outcomes on a global scale. By integrating this model into a professional healthcare setting, it could serve as a valuable tool for assisting healthcare professionals in diagnosing pancreatic cancer earlier, more accurately and efficiently. This project seeks to complement existing diagnostic techniques, potentially improving the overall accuracy of pancreatic cancer screening.
+
+My [article](https://docs.google.com/document/d/1JDKH6a-1uSltBID3uKp9j5DD9JAFdx4j343jYRJuNi8/edit) outlining a bit more of the research and background information for this project can be viewed.
 
 <a name="process"></a>
 ## Process
@@ -32,7 +34,7 @@ Using the [dataset](https://www.kaggle.com/datasets/johnjdavisiv/urinary-biomark
 **2) EDA:** Cleaning and visualization.<br>
 **3) Data Preprocessing:** Handling data to get ready for modeling.<br>
 **4) Feature Selection:** Choosing subsets of the data for modeling.<br>
-**5) Modelling:** Selecting the best supervised classification model for evaluation.<br>
+**5) Modeling:** Selecting the best supervised classification model for evaluation.<br>
 **6) Hyperparameter Tuning:** Iteratively tuning parameters and 'EDA' steps to obtain best results.<br>
 **7) Reporting:** Summarizing finding using various methods.<br>
 **8) Deployment:** Deployment of current model onto AWS
@@ -40,7 +42,7 @@ Using the [dataset](https://www.kaggle.com/datasets/johnjdavisiv/urinary-biomark
 <a name="data"></a>
 ## Data 
 
-Due to the sensitive nature of this data, there was no other publicly available data. However, supporting datasets were found and can be located from the [references](#references) section. The original data columns are listed below with the following descriptions:
+Due to the sensitive nature of this data, there was no other publicly available data. However, supporting datasets were found and can be located from the [references](#references) section. The original data columns are listed below with the original research article column descriptions:
 
 * sample_id: Unique string identifying each subject
 * patient_cohort: Cohort 1,  previously used samples; Cohort 2, newly added samples
@@ -48,7 +50,7 @@ Due to the sensitive nature of this data, there was no other publicly available 
 * age: Age in years
 * sex: M = male, F = female
 * diagnosis: 1 = control (no pancreatic disease), 2 = benign hepatobiliary disease (119 of which are chronic pancreatitis); 3 = Pancreatic ductal adenocarcinoma, i.e. pancreatic cancer
-* stage: For those with pancratic cancer, what stage was it? One of IA, IB, IIA, IIIB, III, IV
+* stage: For those with pancreatic cancer, what stage was it? One of IA, IB, IIA, IIIB, III, IV
 * benign_sample: For those with a benign, non-cancerous diagnosis, what was the diagnosis?
 * plasma_CA19_9: Blood plasma levels of CA 19–9 monoclonal antibody that is often elevated in patients with pancreatic cancer. Only assessed in 350 patients (one goal of the study was to compare various CA 19-9 cutpoints from a blood sample to the model developed using urinary samples).
 * creatinine: Urinary biomarker of kidney function
@@ -69,7 +71,7 @@ Data handling:
     * Column removal
     * Mean replacement
     * KNN replacement
-    * Logisitc Regression Model
+    * Logistic Regression Model
 3) Various scaling and normalization techniques were implemented and compared:
     * Min Max Scaler
     * Robust Scaler
@@ -78,7 +80,7 @@ Data handling:
 4) Various feature selection techniques were implemented and compared:
     * Recursive Feature Elimination
     * Lasso Regression
-    * Principle Component Analysis (PCA)
+    * Principal Component Analysis (PCA)
 
 <a name="results"></a>
 ## Results
@@ -114,9 +116,9 @@ This allowed for the model to have the following results:
 
 ![ROC Curve](images/ROC-curve-best-model)
  
-This model was chosen because of the ability to strike a balance between minimizing FALSE POSITVE RATES and FALSE NEGATIVE RATES. While it is essential that both types of errors should ideally be reduced, the FALSE POSTIVE RATE is a much higher concern, outweighing that of the FALSE NEGATIVE RATE. <br>
-FALSE POSITIVES: Since there is proportionately much more individuals who fall in the ACTUAL NEGATIVE category, the number of overdiagnosis cases are significantly higher than the misdiagnosis cases. Overdiagnosis, can lead to significant consequences, including unnecessary treatment (medical resource strain included), and pychosomatic symptoms arising from the placebo effect in otherwise healthy individuals. <br>
-FALSE NEGATIVES: Conversely, for  individuals facing misdiagnosis, a complex decision concerning ethics is involved, as it hinges on the risk of missed diagnoses and delayed treatment for those who need it. Fortunately, the occurance of FALSE NEGATIVES represent a much smaller percentage of the entire population compared to the FALSE POSITIVES group.
+This model was chosen because of the ability to strike a balance between minimizing FALSE POSITIVE RATES and FALSE NEGATIVE RATES. While it is essential that both types of errors should ideally be reduced, the FALSE POSITIVE RATE is a much higher concern, outweighing that of the FALSE NEGATIVE RATE. <br>
+FALSE POSITIVES: Since there is proportionately much more individuals who fall in the ACTUAL NEGATIVE category, the number of overdiagnosis cases are significantly higher than the misdiagnosis cases. Overdiagnosis can lead to significant consequences, including unnecessary treatment (medical resource strain included), and psychosomatic symptoms arising from the placebo effect in otherwise healthy individuals. <br>
+FALSE NEGATIVES: Conversely, for  individuals facing misdiagnosis, a complex decision concerning ethics is involved, as it hinges on the risk of missed diagnoses and delayed treatment for those who need it. Fortunately, the occurence of FALSE NEGATIVES represent a much smaller percentage of the entire population compared to the FALSE POSITIVES group.
 
 <a name="results"></a>
 ## Deployed Model
@@ -135,13 +137,13 @@ Additional feature engineering or hyperparameter tuning may enhance the model's 
 
 Implementation of this model into real-world healthcare systems presents a complex challenge, particularly concerning its scope of use as a preliminary, non-invasive screening process followed by more intensive invasive procedures. Ethical considerations must be addressed, ranging from patient privacy and consent, to the potential for misdiagnosis or overdiagnosis - ultimately leading to patient outcomes. Additionally, issues related to algorithm bias and equitable access to healthcare must be carefully addressed to ensure the model's ethical use and effectiveness in clinical practice.
 
-At present, the model is not available. However, the code is available for further development and deployment - ideally on a cloud platform like AWS for 24 hour availability and the ability to handle production level traffic. Looking ahead, there are several ways to enhance this project. These include refining the model's architecture, incorporating additional data sources, and implementing advanced algorithms to improve its predictive capabilities. The model may also extend in scale to include monitoring and logging usage and track model performance all the way to automated testing within healthcare facilities after urine tests are conducted. These advancements may also extend to mobile applications by using frameworks such as TensorFlow Lite, enpowering individuals to gain insight about their own health outcomes. By continuing to refine and iterate upon this prototype, more impactful applications of supervised learning in healthcare may emerge.
+At present, the model is not available. However, the code is available for further development and deployment - ideally on a cloud platform like AWS for 24 hour availability and the ability to handle production level traffic. Looking ahead, there are several ways to enhance this project. These include refining the model's architecture, incorporating additional data sources, and implementing advanced algorithms to improve its predictive capabilities. The model may also extend in scale to include monitoring and logging usage and track model performance all the way to automated testing within healthcare facilities after urine tests are conducted. These advancements may also extend to mobile applications by using frameworks such as TensorFlow Lite, empowering individuals to gain insight about their own health outcomes. By continuing to refine and iterate upon this prototype, more impactful applications of supervised learning in healthcare may emerge.
 
 
 <a name="references"></a>
 ## References
 
-Christian Astosini, Claudia Roeefzaad, Yi-Yang Dai, Brian K. Dieckgraefe, Thomas Jons, Wolfgang Kemmner, (2008) REG1A expression is a prognositic marker in colorectal cancer and associated with peritoneal carcinomatosis. International Journal of Cancer. https://doi.org/10.1002/ijc.23466 <br>
+Christian Astosini, Claudia Roeefzaad, Yi-Yang Dai, Brian K. Dieckgraefe, Thomas Jons, Wolfgang Kemmner, (2008) REG1A expression is a prognostic marker in colorectal cancer and associated with peritoneal carcinomatosis. International Journal of Cancer. https://doi.org/10.1002/ijc.23466 <br>
 
 Debernardi S, O’Brien H, Algahmdi AS, Malats N, Stewart GD, et al. (2020) A combination of urinary biomarker panel and PancRISK score for earlier detection of pancreatic cancer: A case–control study. PLOS Medicine 17(12): e1003489. https://doi.org/10.1371/journal.pmed.1003489 <br>
 
@@ -172,4 +174,4 @@ Worldwide cancer data: World cancer research fund international. WCRF Internatio
         - data_preprocessing.py (missing data handling / scaling + normalization / feature selection / data train test split)
         - evaluation.py (accuracy / classification model / ROC curve)
         - model_training.py (several classification models ready for trial)
-        - open_file.py (inital script for opening file and light preprocessing)
+        - open_file.py (initial script for opening file and light cleaning)
