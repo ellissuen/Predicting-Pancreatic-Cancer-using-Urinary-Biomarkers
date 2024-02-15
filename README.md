@@ -56,6 +56,7 @@ Due to the sensitive nature of this data, there was no other publicly available 
 * REG1B: Urinary levels of a protein that may be associated with pancreas regeneration.
 * TFF1: Urinary levels of Trefoil Factor 1, which may be related to regeneration and repair of the urinary tract
 * REG1A: Urinary levels of a protein that may be associated with pancreas regeneration. Only assessed in 306 patients (one goal of the study was to assess REG1B vs REG1A)
+   * all urinary biomarkers measured in ng/mL 
 
 In the process of EDA, some simple correlations can be seen in this pairplot. 
 
@@ -120,6 +121,10 @@ FALSE NEGATIVES: Conversely, for  individuals facing misdiagnosis, a complex dec
 <a name="results"></a>
 ## Deployed Model
 
+Using Google Collab and ngrok, a simple local model was hosted for testing and development purposes. However, it is important to note that this setup relies on a local server, which may have limitations such as downtime when the notebook session is not active or when the ngrok tunnel is not running. Therefore, this deployment method is not suitable for production use or long-term availability and thus is offline for the foreseeable future. 
+
+The limited deployments however, worked well. With the input of features including age, sex and the biomarker levels in ng/mL, the model successfully returned a prediction on the probability that the individual had pancreatic cancer.
+
 
 <a name="future_considerations"></a>
 ## Future Considerations & Challenges
@@ -130,7 +135,7 @@ Additional feature engineering or hyperparameter tuning may enhance the model's 
 
 Implementation of this model into real-world healthcare systems presents a complex challenge, particularly concerning its scope of use as a preliminary, non-invasive screening process followed by more intensive invasive procedures. Ethical considerations must be addressed, ranging from patient privacy and consent, to the potential for misdiagnosis or overdiagnosis - ultimately leading to patient outcomes. Additionally, issues related to algorithm bias and equitable access to healthcare must be carefully addressed to ensure the model's ethical use and effectiveness in clinical practice.
 
-At present, the model is deployed on AWS, providing accessibility and scalability for further development and deployment. Looking ahead, there are several ways to enhance this project. These include refining the model's architecture, incorporating additional data sources, and implementing advanced algorithms to improve its predictive capabilities. These advancements may also extend to mobile applications by using frameworks such as TensorFlow Lite, enpowering individuals to gain insight about their own health outcomes. By continuing to refine and iterate upon this prototype, more impactful applications of supervised learning in healthcare may emerge.
+At present, the model is not available. However, the code is available for further development and deployment - ideally on a cloud platform like AWS for 24 hour availability and the ability to handle production level traffic. Looking ahead, there are several ways to enhance this project. These include refining the model's architecture, incorporating additional data sources, and implementing advanced algorithms to improve its predictive capabilities. The model may also extend in scale to include monitoring and logging usage and track model performance all the way to automated testing within healthcare facilities after urine tests are conducted. These advancements may also extend to mobile applications by using frameworks such as TensorFlow Lite, enpowering individuals to gain insight about their own health outcomes. By continuing to refine and iterate upon this prototype, more impactful applications of supervised learning in healthcare may emerge.
 
 
 <a name="references"></a>
