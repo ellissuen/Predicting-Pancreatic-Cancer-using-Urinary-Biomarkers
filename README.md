@@ -155,6 +155,9 @@ Worldwide cancer data: World cancer research fund international. WCRF Internatio
 ## GitHub File Directory
 
 - Project Folder
+    - README.md
+    - requirements.txt
+    - ppt_presentation (powerpoint presentation for FINAL PROJECT of Lighthouse Labs Data Sciences Bootcamp)
     - data
         -  raw_data (original data file from Kaggle)
         -  data documentation (original data documentation from Kaggle)
