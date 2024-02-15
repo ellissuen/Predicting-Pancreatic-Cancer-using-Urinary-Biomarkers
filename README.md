@@ -17,7 +17,9 @@
 
 According to the World Cancer Research Fund International, pancreatic cancer constitutes ~2.7% of global cancer cases and affects almost 500,000 individuals annually. In its early stages, pancreatic cancer often presents with no noticeble symptoms, and when symptoms do arise, they mimic other general gastrointestinal conditions leading to misdiagnosis or delayed diagnosis. Additionally, there is a lack of effective screening tests compounded by the diseases tendancy for rapid progression and the pancreas's deep abdominal location. Early detection, associated with higher likelihoods of survival in other cancers, is difficult for pancreatic cancer. Consequently, pancreatic cancer disproportionately accounts for ~8% of the global cancer related deaths.
 
-Several pancreatic screening methods exist, include imaging test like MRI and CT scans, endoscopic ultrasound, blood tests and endoscopicretrograde cholangiopancreatography (ERCP), which involves injecting dye into the pancreatic and bile ducts for X-rays. However, none of these tests are conclusive alone and are all invasive and costly. A promising [study](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1003489) published in 2020 by Debernardi S. et al., titled "A combination of urinary biomarker panel and PancRISK score for earlier detection of pancreatic cancer: A case–control study." offers a preliminary conclusion that biomarkers found in a common urine sample may hold the key to early pancreatic cancer detection. Within this study there are 3 groups of participants, healthy individuals (a), individuals with benign tumors (b) but not life threatening and individuals that have malignant tumors at varing stages of cancer (c). ![Tissue sample of various groups of participants](images/pancreatic-cancer.jpg)
+Several pancreatic screening methods exist, include imaging test like MRI and CT scans, endoscopic ultrasound, blood tests and endoscopicretrograde cholangiopancreatography (ERCP), which involves injecting dye into the pancreatic and bile ducts for X-rays. However, none of these tests are conclusive alone and are all invasive and costly. A promising [study](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1003489) published in 2020 by Debernardi S. et al., titled "A combination of urinary biomarker panel and PancRISK score for earlier detection of pancreatic cancer: A case–control study." offers a preliminary conclusion that biomarkers found in a common urine sample may hold the key to early pancreatic cancer detection. Within this study there are 3 groups of participants, healthy individuals (a), individuals with benign tumors (b) but not life threatening and individuals that have malignant tumors at varing stages of cancer (c). <br>
+<br>
+![Tissue sample of various groups of participants](images/pancreatic-cancer.jpg)
 
 <a name="goals"></a>
 ## Goals
@@ -55,7 +57,7 @@ Due to the sensitive nature of this data, there was no other publicly available 
 * TFF1: Urinary levels of Trefoil Factor 1, which may be related to regeneration and repair of the urinary tract
 * REG1A: Urinary levels of a protein that may be associated with pancreas regeneration. Only assessed in 306 patients (one goal of the study was to assess REG1B vs REG1A)
 
-In the process of EDA, some simple correlations can be seen in this pairplot.
+In the process of EDA, some simple correlations can be seen in this pairplot. 
 
 ![EDA pairplot](images/EDA-with-cancer-colored.jpg)
 
@@ -105,7 +107,10 @@ This allowed for the model to have the following results:
    * Precision: 0.92
    * Recall: 0.89
    * F1 - score: 0.91
- 
+* Confusion Matrix <br>
+[77, 3 ]<br>
+[ 4, 34]
+
 ![ROC Curve](images/ROC-curve-best-model)
  
 This model was chosen because of the ability to strike a balance between minimizing FALSE POSITVE RATES and FALSE NEGATIVE RATES. While it is essential that both types of errors should ideally be reduced, the FALSE POSTIVE RATE is a much higher concern, outweighing that of the FALSE NEGATIVE RATE. <br>
